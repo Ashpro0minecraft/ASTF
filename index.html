@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>E-A.S.T.F Company</title>
-   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <title>E-A.S.T.F Company</titl>
     <link rel="icon" type="image/x-icon" href="https://ashpro0minecraft.github.io/Iptv/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style ="text/css">@media only screen and (orientation: landscape) {
@@ -157,7 +155,7 @@
 <h1> E-A.S.T.F Company</h1><hr id="h"></div>
 <h2 style="text-align :center "><b>Registration Form</b></h2>
 </center>
-<form id="registerForm">
+<form id="form">
     <label for="fn" id="k">First name:</label>
 <input type="text" id="fn" name="fname" required><br>
 <br>
@@ -193,18 +191,24 @@
 <button type="submit">REGISTER</button>
 </center>
 </form>
-   <p id="status"></p>
+   <p id="msg"></p>
 
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script>
     const firebaseConfig = {
-      apiKey: "AIzaSyDHwTdaWjcK-JE1SqTyNNZ7Ch3v0dwqiZI",
-      authDomain: "e-astf-company.firebaseapp.com",
-      projectId: "e-astf-company"
-    };
+  apiKey: "AIzaSyDHwTdaWjcK-JE1SqTyNNZ7Ch3v0dwqiZI",
+  authDomain: "e-astf-company.firebaseapp.com",
+  projectId: "e-astf-company",
+  storageBucket: "e-astf-company.firebasestorage.app",
+  messagingSenderId: "245539754737",
+  appId: "1:245539754737:web:3d53b6c315647a43b84f50",
+  measurementId: "G-N7BLRWWTZF"
+};
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
-    document.getElementById('registerForm').addEventListener('submit', async function (e) {
+    document.getElementById('form').addEventListener('submit', async function (e) {
       e.preventDefault();
       const formData = new FormData(this);
       const email = formData.get("email");
